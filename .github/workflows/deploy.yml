@@ -3,7 +3,7 @@ name: NodeJs Application CI/CD pipeline
 on:
   push:
     branches:
-    - main
+      - main
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -16,7 +16,7 @@ jobs:
         uses: appleboy/ssh-action@v.0.3
         with:
           host: ${{ secrets.SSH_HOST}}
-          hostname: root
+          username: root
           key: ${{secrets.SSH_KEY}}
           script: |
             cd /root/Nodejs-application-CICD-pipeline
